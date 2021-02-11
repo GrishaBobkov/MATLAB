@@ -1,0 +1,6 @@
+clear
+x=[-400:0.2:400];
+a=sign(x).*(abs(x).^0.5);
+y=fresnelc(a);
+z=fresnels(a);
+figure;hold on;plot(y, z);
