@@ -26,7 +26,7 @@ current_length=0;
 for kk = 1:length(k0)
     k=k0(kk);
     a1=[];
-    for ii = U0+0.0001:0.05:30
+    for ii = U0+0.0001:0.2:Emax
         a2=fzero(f1, ii);
         flag=true;
         for jj = 1:length(a1)
@@ -86,5 +86,5 @@ global U0
 global h
 mu=(2*m.*E/h.^2).^0.5;
 l=(2*m.*(E-U0)/h.^2).^0.5;
-    q=cos(mu.*a).*cos(l.*b)-(mu.^2-l.^2)./(2*mu.*l).*sin(mu.*a).*sin(l.*b)-cos(k.*(a+b));
+    q=cos(mu.*a).*cos(l.*b)-(mu.^2+l.^2)./(2*mu.*l).*sin(mu.*a).*sin(l.*b)-cos(k.*(a+b));
 end
