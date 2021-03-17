@@ -1,11 +1,11 @@
 function [F,X,Y,P] = SpherePotential(XYZ,Q,R,r0,a,b,Dx,Dy,Nxy)
 P=[0 0;0 0;0 0];
-c=cross(b, a);%Вектор вдоль оси OY
-if norm(c)<10^(-10)
+
+if norm(cross(b, a))<10^(-10)
    error('a and b should not be parallel'); 
 end
 P(:, 1)=a;
-P(:, 2)=c;%Сформировали матрицу перехода
+P(:, 2)=b;%Сформировали матрицу перехода
 F=zeros(Nxy(1), Nxy(2));
 Y=zeros(Nxy(1), Nxy(2));
 X=zeros(Nxy(1), Nxy(2));
